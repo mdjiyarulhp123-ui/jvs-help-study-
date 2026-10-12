@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101c40">
+<meta name="description" content="JVS Help Study - Class 6 to 10, free notes, MCQ quizzes and study resources.">
+<title>JVS Help Study | Learn Every Day</title>
+
+<style>
+:root{
+  --bg:#f4f7ff;
+  --card:#ffffff;
+  --text:#182447;
+  --muted:#687592;
+  --primary:#5146e5;
+  --blue:#1478f2;
+  --border:#e3e9f5;
+  --green:#0d9b71;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+button,input,select{font:inherit}
+button,a{touch-action:manipulation}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+header{
+  background:#101c40;color:white;position:sticky;top:0;
+  z-index:20;box-shadow:0 3px 18px #101c4020;
+}
+.nav{
+  max-width:1120px;margin:auto;padding:13px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:19px}
+.logo{
+  width:43px;height:43px;border-radius:14px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,#776bff,#20b9ee);
+  font-weight:900;font-size:19px;
+}
+nav{display:flex;gap:15px;align-items:center}
+nav a{font-size:13px;color:#e1e8ff}
+nav a:hover{color:#65d5ff}
+.menu{display:none;background:#26365d;color:white;border:0;
+  padding:9px 12px;border-radius:10px}
+.hero{
+  background:linear-gradient(130deg,#111d43,#243d8c 60%,#5146e5);
+  color:white;padding:52px 20px 62px;overflow:hidden;
+}
+.hero-inner{max-width:1080px;margin:auto;display:grid;
+  grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}
+.pill{display:inline-block;background:#ffffff1c;border:1px solid #ffffff30;
+  padding:7px 12px;border-radius:30px;font-size:12px}
+.hero h1{font-size:clamp(34px,6vw,57px);line-height:1.12;margin:18px 0}
+.hero h1 span{color:#7be4ff}
+.hero p{color:#dce6ff;line-height:1.8;max-width:570px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:750;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn-main{background:#fff;color:#2639a3}
+.btn-ghost{background:#ffffff16;color:white;border:1px solid #ffffff50}
+.btn-primary{background:var(--primary);color:white}
+.btn-green{background:var(--green);color:white}
+.btn-light{background:#edf0ff;color:#4339bd}
+.hero-art{
+  min-height:235px;border:1px solid #ffffff35;border-radius:30px;
+  background:linear-gradient(145deg,#ffffff20,#ffffff08);
+  display:grid;place-items:center;text-align:center;padding:25px;
+  box-shadow:0 25px 70px #090f2e30;
+}
+.book{font-size:78px;filter:drop-shadow(0 10px 12px #0003)}
+.hero-art h3{margin:10px 0 5px;font-size:22px}
+.hero-art p{margin:0;font-size:13px}
+.stats{
+  max-width:1000px;margin:-28px auto 0;padding:0 16px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;
+}
+.stat{background:var(--card);padding:19px 10px;border-radius:18px;
+  text-align:center;border:1px solid var(--border);box-shadow:0 7px 24px #243d8c09}
+.stat strong{display:block;color:var(--primary);font-size:23px}
+.stat span{font-size:12px;color:var(--muted)}
+main{max-width:1080px;margin:auto;padding:30px 17px 60px}
+section{scroll-margin-top:85px;margin-top:37px}
+.section-head{display:flex;align-items:end;justify-content:space-between;
+  gap:12px;margin-bottom:17px}
+h2{font-size:25px;margin:0 0 6px}
+.sub{color:var(--muted);font-size:13px;line-height:1.7;margin:0}
+.searchbar{
+  width:100%;padding:13px 15px;border:1px solid var(--border);
+  border-radius:13px;background:var(--card);outline:none;color:var(--text);
+  margin:10px 0 18px;
+}
+.searchbar:focus,input:focus,select:focus{border-color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:19px;
+  padding:19px;box-shadow:0 5px 20px #253c7810;
+}
+.class-card{transition:transform .2s,border-color .2s}
+.class-card:hover{transform:translateY(-3px);border-color:#b9b5ff}
+.class-icon{font-size:29px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 7px}
+.card p{font-size:13px;line-height:1.7;color:var(--muted)}
+.tag{display:inline-block;background:#efefff;color:#5146c9;
+  border-radius:8px;padding:5px 8px;font-size:11px;margin:2px 3px 9px 0}
+.card .btn{width:100%;margin-top:8px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tools select,.tools input{
+  min-width:0;padding:11px;border:1px solid var(--border);
+  background:var(--card);border-radius:10px;color:var(--text);
+}
+.tools select{flex:1}
+.tools input{flex:2}
+.quiz-question{font-size:17px;font-weight:750;line-height:1.6;margin:17px 0}
+.option{
+  display:flex;gap:10px;align-items:center;padding:12px;margin:9px 0;
+  border:1px solid var(--border);border-radius:12px;cursor:pointer;
+}
+.option:has(input:checked){border-color:var(--primary);background:#f2f1ff}
+.option input{accent-color:var(--primary)}
+.feedback{padding:12px;border-radius:12px;background:#eef3ff;
+  line-height:1.7;margin-top:14px;font-size:14px}
+.note-item{border-bottom:1px solid var(--border);padding:14px 0}
+.note-item:last-child{border-bottom:0}
+.note-item h3{margin-bottom:5px}
+.empty{padding:24px;text-align:center;color:var(--muted);font-size:14px}
+footer{background:#101c40;color:white;text-align:center;padding:30px 16px}
+footer p{color:#c8d2ed;font-size:13px;line-height:1.8}
+footer a{color:#7be4ff}
+.small{font-size:12px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--border);margin:15px 0}
+.hidden{display:none!important}
+body.dark{
+  --bg:#0b1226;--card:#141e36;--text:#eef2ff;
+  --muted:#a7b4d0;--border:#293651;
+}
+body.dark .tag{background:#282b54;color:#c4c2ff}
+body.dark .option:has(input:checked){background:#242344}
+body.dark .feedback{background:#1d2d4c}
+body.dark .searchbar,body.dark .tools select,body.dark .tools input{color:var(--text)}
+@media(max-width:700px){
+  nav{display:none;position:absolute;top:68px;left:12px;right:12px;
+    background:#101c40;padding:17px;border-radius:14px;
+    flex-direction:column;align-items:stretch;box-shadow:0 12px 30px #0003}
+  nav.open{display:flex}
+  nav a{padding:7px}
+  .menu{display:block}
+  .hero{padding:38px 18px 48px}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-art{min-height:170px}
+  .book{font-size:55px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card{padding:14px}
+  .card h3{font-size:15px}
+  .card p{font-size:12px}
+  .section-head{align-items:start;flex-direction:column}
+  h2{font-size:22px}
+}
+@media(max-width:390px){
+  .grid{grid-template-columns:1fr}
+  .stats{gap:7px}
+  .stat{padding:15px 5px}
+  .stat strong{font-size:19px}
+  .brand{font-size:16px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <a href="#home" class="brand">
+      <div class="logo">JVS</div>
+      <span>JVS Help Study</span>
+    </a>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#quiz">MCQ Quiz</a>
+      <a href="#notes">Notes & PDF</a>
+      <a href="#scores">My Scores</a>
+    </nav>
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰ Menu</button>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <span class="pill">🎓 YOUR FREE LEARNING PARTNER</span>
+      <h1>Learn Better.<br>Score <span>Higher.</span></h1>
+      <p>
+        कक्षा 6 से 10 तक की पढ़ाई अब आसान।
+        नोट्स पढ़ो, MCQ टेस्ट दो और अपनी तैयारी को बेहतर बनाओ।
+      </p>
+      <div class="actions">
+        <a class="btn btn-main" href="#classes">📚 Start Learning</a>
+        <a class="btn btn-ghost" href="#quiz">✍️ Take a Quiz</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div>
+        <div class="book">📚</div>
+        <h3>Knowledge is Power</h3>
+        <p>हर दिन सीखो, आगे बढ़ो!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><strong>6–10</strong><span>Classes</span></div>
+  <div class="stat"><strong>Free</strong><span>Learning Resources</span></div>
+  <div class="stat"><strong>24/7</strong><span>Learn at Your Pace</span></div>
+</div>
+
+<main>
+  <section id="classes">
+    <div class="section-head">
+      <div>
+        <h2>📚 Choose Your Class</h2>
+        <p class="sub">अपनी कक्षा चुनकर पढ़ाई शुरू करो।</p>
+      </div>
+    </div>
+    <input id="classSearch" class="searchbar"
+      placeholder="🔎 कक्षा खोजें... जैसे Class 9" aria-label="Search classes">
+    <div class="grid" id="classGrid"></div>
+  </section>
+
+  <section id="quiz">
+    <div class="section-head">
+      <div>
+        <h2>✍️ MCQ Practice Quiz</h2>
+        <p class="sub">सवाल हल करो और तुरंत अपना स्कोर जानो।</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tools">
+        <select id="quizClass" aria-label="Choose quiz class">
+          <option value="6">Class 6</option>
+          <option value="7">Class 7</option>
+          <option value="8">Class 8</option>
+          <option value="9" selected>Class 9</option>
+          <option value="10">Class 10</option>
+        </select>
+        <select id="quizSubject" aria-label="Choose subject">
+          <option value="math">Mathematics</option>
+          <option value="science">Science</option>
+          <option value="gk">General Knowledge</option>
+        </select>
+      </div>
+      <div id="quizArea">
+        <p class="sub">टेस्ट शुरू करने के लिए बटन दबाएँ।</p>
+        <button class="btn btn-primary" id="startQuiz">Start Quiz →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="section-head">
+      <div>
+        <h2>📖 Notes & PDF Library</h2>
+        <p class="sub">नोट्स पढ़ो या PDF खोलो। अपनी स्टडी सामग्री भी जोड़ सकते हो।</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tools">
+        <select id="noteClass" aria-label="Filter notes by class">
+          <option value="all">All Classes</option>
+          <option value="6">Class 6</option><option value="7">Class 7</option>
+          <option value="8">Class 8</option><option value="9">Class 9</option>
+          <option value="10">Class 10</option>
+        </select>
+        <input id="noteSearch" placeholder="🔎 नोट्स खोजें..." aria-label="Search notes">
+      </div>
+      <div id="notesList"></div>
+      <hr>
+      <h3>➕ Add Study Material</h3>
+      <p class="sub">नोट का नाम और PDF का सार्वजनिक लिंक डालें।</p>
+      <form id="noteForm">
+        <div class="tools">
+          <select id="addClass" required aria-label="Select class">
+            <option value="6">Class 6</option><option value="7">Class 7</option>
+            <option value="8">Class 8</option><option value="9" selected>Class 9</option>
+            <option value="10">Class 10</option>
+          </select>
+          <input id="addSubject" placeholder="Subject" required>
+        </div>
+        <input class="searchbar" id="addTitle" placeholder="नोट्स का नाम" required>
+        <input class="searchbar" id="addUrl" type="url"
+          placeholder="PDF का https:// लिंक" required>
+        <button class="btn btn-primary" type="submit">Add Notes +</button>
+      </form>
+      <p class="small">तुम्हारे जोड़े हुए नोट्स इसी ब्राउज़र में सेव होंगे। PDF लिंक इंटरनेट पर खुलने योग्य होना चाहिए।</p>
+    </div>
+  </section>
+
+  <section id="scores">
+    <div class="section-head">
+      <div>
+        <h2>📊 My Test Scores</h2>
+        <p class="sub">इस ब्राउज़र में सेव हुए पिछले टेस्ट के परिणाम।</p>
+      </div>
+      <button class="btn btn-light" id="clearScores">Clear History</button>
+    </div>
+    <div class="card" id="scoreList"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand" style="justify-content:center">
+    <div class="logo">JVS</div><span>JVS Help Study</span>
+  </div>
+  <p>सीखो • अभ्यास करो • आगे बढ़ो</p>
+  <p>Free Education Resources for Classes 6–10</p>
+  <p>© <span id="year"></span> JVS Help Study. Made for learners ❤️</p>
+  <p><a href="#home">Back to Top ↑</a></p>
+</footer>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+
+const classInfo = [
+  {n:6, icon:"🌱", desc:"अपनी बुनियादी पढ़ाई मजबूत करो।"},
+  {n:7, icon:"📘", desc:"नए विषय सीखो और अभ्यास करो।"},
+  {n:8, icon:"🚀", desc:"अगली कक्षा की तैयारी करो।"},
+  {n:9, icon:"🎯", desc:"स्कूल टेस्ट और परीक्षा की तैयारी।"},
+  {n:10,icon:"🏆", desc:"बोर्ड परीक्षा की तैयारी में मदद।"}
+];
+
+function load(key, fallback){
+  try{
+    const value = JSON.parse(localStorage.getItem(key));
+    return value === null ? fallback : value;
+  }catch(e){return fallback}
+}
+function save(key, value){
+  try{
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  }catch(e){
+    alert("ब्राउज़र में जगह नहीं है या सेविंग बंद है।");
+    return false;
+  }
+}
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+function renderClasses(){
+  const q = $("classSearch").value.toLowerCase().trim();
+  const list = classInfo.filter(c =>
+    ("class "+c.n+" "+c.desc).toLowerCase().includes(q)
+  );
+  $("classGrid").innerHTML = list.length ? list.map(c => `
+    <article class="card class-card">
+      <div class="class-icon">${c.icon}</div>
+      <span class="tag">CLASS ${c.n}</span>
+      <h3>Class ${c.n}</h3>
+      <p>${c.desc}</p>
+      <button class="btn btn-primary chooseClass" data-class="${c.n}">
+        Explore Class →
+      </button>
+    </article>
+  `).join("") : '<div class="empty">कोई कक्षा नहीं मिली।</div>';
+}
+$("classSearch").addEventListener("input", renderClasses);
+
+$("classGrid").addEventListener("click", e => {
+  const btn = e.target.closest(".chooseClass");
+  if(!btn) return;
+  $("quizClass").value = btn.dataset.class;
+  $("noteClass").value = btn.dataset.class;
+  $("addClass").value = btn.dataset.class;
+  renderNotes();
+  $("quizArea").innerHTML =
+    '<p class="sub">Class '+btn.dataset.class+' के लिए विषय चुनकर टेस्ट शुरू करो।</p>'+
+    '<button class="btn btn-primary" id="startQuiz">Start Quiz →</button>';
+  document.querySelector("#quiz").scrollIntoView({behavior:"smooth"});
+});
+
+// Practice questions. Add more curriculum-verified questions as needed.
+const questions = {
+  math: [
+    {q:"12 × 8 का मान क्या है?",o:["84","96","108","88"],a:1},
+    {q:"त्रिभुज के तीनों कोणों का योग कितना होता है?",o:["90°","180°","270°","360°"],a:1},
+    {q:"√81 का मान क्या है?",o:["7","8","9","10"],a:2},
+    {q:"यदि x + 5 = 12, तो x कितना है?",o:["5","6","7","8"],a:2},
+    {q:"सबसे छोटी अभाज्य संख्या कौन-सी है?",o:["1","2","3","0"],a:1}
+  ],
+  science: [
+    {q:"पौधे अपना भोजन मुख्य रूप से किस प्रक्रिया से बनाते हैं?",o:["श्वसन","प्रकाश संश्लेषण","पाचन","वाष्पीकरण"],a:1},
+    {q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2},
+    {q:"बल की SI इकाई क्या है?",o:["जूल","वाट","न्यूटन","मीटर"],a:2},
+    {q:"मनुष्य साँस लेने में मुख्य रूप से कौन-सी गैस उपयोग करता है?",o:["ऑक्सीजन","हाइड्रोजन","हीलियम","नियॉन"],a:0},
+    {q:"पृथ्वी के प्राकृतिक उपग्रह का नाम क्या है?",o:["मंगल","चंद्रमा","शुक्र","सूर्य"],a:1}
+  ],
+  gk: [
+    {q:"भारत की राजधानी क्या है?",o:["पटना","मुंबई","नई दिल्ली","कोलकाता"],a:2},
+    {q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","बाघ","हाथी","मोर"],a:1},
+    {q:"एक सप्ताह में कितने दिन होते हैं?",o:["5","6","7","8"],a:2},
+    {q:"भारत का स्वतंत्रता दिवस कब मनाया जाता है?",o:["26 जनवरी","15 अगस्त","2 अक्टूबर","14 नवंबर"],a:1},
+    {q:"सौरमंडल का तारा कौन है?",o:["पृथ्वी","चंद्रमा","सूर्य","मंगल"],a:2}
+  ]
+};
+
+const subjectNames = {
+  math:"Mathematics", science:"Science", gk:"General Knowledge"
+};
+let currentQuestions = [];
+let currentIndex = 0;
+let correctCount = 0;
+let chosenAnswer = null;
+let quizActive = false;
+let quizFinished = false;
+
+$("startQuiz").addEventListener("click", startQuiz);
+$("quizClass").addEventListener("change", resetQuizView);
+$("quizSubject").addEventListener("change", resetQuizView);
+
+function resetQuizView(){
+  quizActive = false;
+  quizFinished = false;
+  $("quizArea").innerHTML =
+    '<p class="sub">टेस्ट शुरू करने के लिए बटन दबाएँ।</p>'+
+    '<button class="btn btn-primary" id="startQuiz">Start Quiz →</button>';
+  $("startQuiz").addEventListener("click", startQuiz);
+}
+
+function startQuiz(){
+  const subject = $("quizSubject").value;
+  currentQuestions = questions[subject].map(q => ({
+    ...q, o:q.o.slice()
+  }));
+  currentIndex = 0;
+  correctCount = 0;
+  chosenAnswer = null;
+  quizActive = true;
+  quizFinished = false;
+  showQuestion();
+}
+
+function showQuestion(){
+  if(currentIndex >= currentQuestions.length){
+    finishQuiz();
+    return;
+  }
+  const q = currentQuestions[currentIndex];
+  chosenAnswer = null;
+  $("quizArea").innerHTML = `
+    <div class="tools">
+      <span class="tag">CLASS ${$("quizClass").value}</span>
+      <span class="tag">${escapeHTML(subjectNames[$("quizSubject").value])}</span>
+      <span class="tag">Question ${currentIndex+1}/${currentQuestions.length}</span>
+    </div>
+    <div style="height:6px;background:var(--border);border-radius:8px">
+      <div style="height:6px;width:${currentIndex/currentQuestions.length*100}%;
+        background:var(--primary);border-radius:8px"></div>
+    </div>
+    <div class="quiz-question">${escapeHTML(q.q)}</div>
+    <div id="options">
+      ${q.o.map((option,i)=>`
+        <label class="option">
+          <input type="radio" name="answer" value="${i}">
+          <span>${escapeHTML(option)}</span>
+        </label>
+      `).join("")}
+    </div>
+    <p class="small" id="questionFeedback" aria-live="polite"></p>
+    <button class="btn btn-primary" id="submitAnswer">Check Answer</button>
+  `;
+  $("submitAnswer").addEventListener("click", checkAnswer);
+}
+
+function checkAnswer(){
+  if(!quizActive || quizFinished) return;
+  const selected = document.querySelector('input[name="answer"]:checked');
+  if(!selected){
+    $("questionFeedback").textContent = "पहले एक विकल्प चुनो।";
+    return;
+  }
+  chosenAnswer = Number(selected.value);
+  const q = currentQuestions[currentIndex];
+  const isCorrect = chosenAnswer === q.a;
+  if(isCorrect) correctCount++;
+  quizActive = false;
+  document.querySelectorAll('input[name="answer"]').forEach(el=>{
+    el.disabled = true;
+  });
+  $("questionFeedback").innerHTML =
+    '<span style="color:'+(isCorrect?'var(--green)':'#d54b53')+'">'+
+    (isCorrect ? "✅ सही जवाब!" : "❌ सही जवाब: "+escapeHTML(q.o[q.a]))+
+    '</span>';
+  $("submitAnswer").textContent =
+    currentIndex === currentQuestions.length-1 ? "See Result →" : "Next Question →";
+  $("submitAnswer").addEventListener("click", nextQuestion, {once:true});
+}
+
+function nextQuestion(){
+  currentIndex++;
+  quizActive = true;
+  showQuestion();
+}
+
+function finishQuiz(){
+  quizActive = false;
+  quizFinished = true;
+  const total = currentQuestions.length;
+  const percent = Math.round(correctCount/total*100);
+  const record = {
+    date:new Date().toLocaleString(),
+    class:$("quizClass").value,
+    subject:subjectNames[$("quizSubject").value],
+    score:correctCount,total,percent
+  };
+  const scores = load("jvsHelpScores",[]);
+  scores.unshift(record);
+  save("jvsHelpScores",scores.slice(0,30));
+  $("quizArea").innerHTML = `
+    <div style="text-align:center;padding:15px 0">
+      <div style="font-size:55px">${percent>=60?"🏆":"📘"}</div>
+      <h2>Test Completed!</h2>
+      <p class="sub">Class ${record.class} • ${escapeHTML(record.subject)}</p>
+      <h2 style="color:var(--primary);font-size:38px">${correctCount}/${total}</h2>
+      <p>तुम्हारा स्कोर: <strong>${percent}%</strong></p>
+      <div class="feedback">${percent>=60?"बहुत अच्छा! अभ्यास जारी रखो।":"अच्छी कोशिश! फिर से अभ्यास करो।"}</div>
+      <button class="btn btn-primary" id="retryQuiz" style="margin-top:15px">Try Again ↻</button>
+    </div>
+  `;
+  $("retryQuiz").addEventListener("click",startQuiz);
+  renderScores();
+}
+
+function renderScores(){
+  const scores = load("jvsHelpScores",[]);
+  $("scoreList").innerHTML = scores.length ? scores.map(s=>`
+    <div class="note-item">
+      <h3>Class ${escapeHTML(s.class)} · ${escapeHTML(s.subject)}</h3>
+      <p class="sub">${escapeHTML(s.date)}</p>
+      <strong style="color:var(--primary)">${s.score}/${s.total} (${s.percent}%)</strong>
+    </div>
+  `).join("") : '<div class="empty">अभी कोई टेस्ट रिजल्ट नहीं है। पहले MCQ Quiz दो!</div>';
+}
+$("clearScores").addEventListener("click",()=>{
+  if(confirm("क्या तुम टेस्ट हिस्ट्री हटाना चाहते हो?")){
+    save("jvsHelpScores",[]);
+    renderScores();
+  }
+});
+
+// Notes that come with the starter website are sample resources.
+const defaultNotes = [
+  {id:"n1",class:"9",subject:"Mathematics",title:"गणित: अभ्यास और सूत्र",url:""},
+  {id:"n2",class:"9",subject:"Science",title:"विज्ञान: अध्यायवार तैयारी",url:""},
+  {id:"n3",class:"9",subject:"GK",title:"सामान्य ज्ञान अभ्यास",url:""},
+  {id:"n4",class:"10",subject:"Science",title:"विज्ञान: परीक्षा तैयारी",url:""},
+  {id:"n5",class:"8",subject:"Mathematics",title:"गणित: बुनियादी अभ्यास",url:""},
+  {id:"n6",class:"6",subject:"English",title:"English: Basic Practice",url:""}
+];
+
+function allNotes(){
+  return [...defaultNotes,...load("jvsHelpNotes",[])];
+}
+function renderNotes(){
+  const cls = $("noteClass").value;
+  const q = $("noteSearch").value.toLowerCase().trim();
+  const list = allNotes().filter(n=>
+    (cls==="all"||n.class===cls) &&
+    (n.title+" "+n.subject+" "+n.class).toLowerCase().includes(q)
+  );
+  $("notesList").innerHTML = list.length ? list.map(n=>`
+    <div class="note-item">
+      <span class="tag">CLASS ${escapeHTML(n.class)}</span>
+      <span class="tag">${escapeHTML(n.subject)}</span>
+      <h3>${escapeHTML(n.title)}</h3>
+      <p class="sub">${n.url?"PDF link उपलब्ध है।":"अभी PDF लिंक नहीं जोड़ा गया है।"}</p>
+      ${n.url ? `<a class="btn btn-light" href="${escapeHTML(n.url)}"
+        target="_blank" rel="noopener noreferrer">Open PDF ↗</a>` :
+        '<span class="small">स्टडी मटेरियल का लिंक शिक्षक द्वारा जोड़ा जाना बाकी है।</span>'}
+    </div>
+  `).join("") : '<div class="empty">कोई नोट्स नहीं मिले।</div>';
+}
+$("noteClass").addEventListener("change",renderNotes);
+$("noteSearch").addEventListener("input",renderNotes);
+
+$("noteForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const url = $("addUrl").value.trim();
+  try{
+    const parsed = new URL(url);
+    if(parsed.protocol!=="https:" && parsed.protocol!=="http:"){
+      alert("कृपया सही PDF URL डालो।");return;
+    }
+  }catch(err){alert("कृपया सही PDF URL डालो।");return;}
+  const notes = load("jvsHelpNotes",[]);
+  notes.unshift({
+    id:"custom-"+Date.now(),
+    class:$("addClass").value,
+    subject:$("addSubject").value.trim(),
+    title:$("addTitle").value.trim(),
+    url
+  });
+  if(save("jvsHelpNotes",notes)){
+    e.target.reset();
+    $("addClass").value="9";
+    renderNotes();
+    alert("नोट्स इस ब्राउज़र में सेव हो गए!");
+  }
+});
+
+// Mobile navigation
+$("menuBtn").addEventListener("click",()=>{
+  $("nav").classList.toggle("open");
+});
+$("nav").addEventListener("click",e=>{
+  if(e.target.closest("a")) $("nav").classList.remove("open");
+});
+
+// Dark mode: press and hold brand logo.
+document.querySelector(".logo").title="Dark mode toggle";
+let pressTimer;
+const logo = document.querySelector(".logo");
+logo.addEventListener("click",()=>{
+  document.body.classList.toggle("dark");
+});
+$("year").textContent = new Date().getFullYear();
+
+renderClasses();
+renderNotes();
+renderScores();
+</script>
+</body>
+</html>
